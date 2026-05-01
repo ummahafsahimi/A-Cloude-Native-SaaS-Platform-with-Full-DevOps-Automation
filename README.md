@@ -84,6 +84,11 @@ Once deployed, the UI is available at:
 Code
 http://YOUR-loadbalancer-IP
 
+This OnlineBoutique shop will appear...
+
+<img width="941" height="459" alt="image" src="https://github.com/user-attachments/assets/cf03f14e-960c-42cf-a188-2a5b7ec92186" />
+
+
 ## Debugging & Troubleshooting 
 Here I have solved real production‑style issues:
 
