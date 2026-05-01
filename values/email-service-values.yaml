@@ -1,0 +1,13 @@
+appName: emailservice
+appImage: gcr.io/google-samples/microservices-demo/emailservice
+appVersion: v0.10.0
+appReplicas: 2
+containerPort: 8080
+containerEnvVars: 
+- name: PORT
+  value: "8080"
+
+servicePort: 5000
+
+serviceAccountNameOverride: "svc-worker"
+gsaEmail: "svc-worker-sa@ecommerce-platform-automation.iam.gserviceaccount.com"

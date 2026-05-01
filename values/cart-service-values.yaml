@@ -1,0 +1,15 @@
+appName: cartservice
+appImage: gcr.io/google-samples/microservices-demo/cartservice
+appVersion: v0.10.0
+appReplicas: 2
+containerPort: 7070
+containerEnvVars: 
+- name: PORT
+  value: "7070"
+- name: REDIS_ADDR
+  value: "10.218.138.180"
+
+servicePort: 7070
+
+serviceAccountNameOverride: "svc-cartservice"
+gsaEmail: "svc-cartservice-sa@ecommerce-platform-automation.iam.gserviceaccount.com"
