@@ -81,7 +81,7 @@ Now Open the frontend LoadBalancer IP
 ## Live Application
 Once deployed, the UI is available at:
 
-Code
+
 http://YOUR-loadbalancer-IP
 
 This OnlineBoutique shop will appear...
