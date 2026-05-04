@@ -122,3 +122,13 @@ Add autoscaling (HPA)
 Add distributed tracing
 
 Add service mesh (Istio or Anthos)
+
+### Full End‑to‑End Pipeline Summary
+Stage	              Tool	                             Purpose
+CI	              GitHub Actions	           Build, test, scan, push images
+Artifact   	    Artifact Registry	           Store versioned container images
+GitOps	        GitHub Repo #2	             Holds Helmfile + manifests
+CD	             Argo CD	                    Deploy to GKE, drift correction, rollback
+Infra	           Terraform	                GKE, Redis, VPC, IAM
+Observability	  Prometheus + Grafana        Metrics, dashboards, logs
+                 + Cloud Logging	            
