@@ -1,8 +1,5 @@
 appName: emailservice
-appImage: northamerica-northeast2-docker.pkg.dev/ecommerce-platform-automation/inventory-registry/emailservice
-appVersion: v1.0.0
-#appImage: gcr.io/google-samples/microservices-demo/emailservice
-#appVersion: v0.10.0
+appImage: gcr.io/google-samples/microservices-demo/emailservice#appVersion: v0.10.0
 appReplicas: 2
 containerPort: 8080
 containerEnvVars: 
