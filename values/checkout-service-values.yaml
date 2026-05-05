@@ -1,5 +1,5 @@
 appName: checkoutservice
-appImage: gcr.io/google-samples/microservices-demo/checkoutservice
+appImage: northamerica-northeast2-docker.pkg.dev/ecommerce-platform-automation/inventory-registry/checkoutservice
 appVersion: v0.10.0
 appReplicas: 2
 containerPort: 5050

@@ -1,5 +1,5 @@
 appName: shippingservice
-appImage: gcr.io/google-samples/microservices-demo/shippingservice
+appImage: northamerica-northeast2-docker.pkg.dev/ecommerce-platform-automation/inventory-registry/shippingservice
 appVersion: v0.10.0
 appReplicas: 2
 containerPort: 50051

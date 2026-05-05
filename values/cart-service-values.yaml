@@ -1,5 +1,5 @@
 appName: cartservice
-appImage: gcr.io/google-samples/microservices-demo/cartservice
+appImage: northamerica-northeast2-docker.pkg.dev/ecommerce-platform-automation/inventory-registry/cartservice
 appVersion: v0.10.0
 appReplicas: 2
 containerPort: 7070

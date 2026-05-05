@@ -1,5 +1,5 @@
 appName: productcatalogservice
-appImage: gcr.io/google-samples/microservices-demo/productcatalogservice
+appImage: northamerica-northeast2-docker.pkg.dev/ecommerce-platform-automation/inventory-registry/productcatalogservice
 appVersion: v0.10.0
 appReplicas: 2
 containerPort: 3550

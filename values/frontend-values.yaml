@@ -1,5 +1,5 @@
 appName: frontend
-appImage: gcr.io/google-samples/microservices-demo/frontend
+appImage: northamerica-northeast2-docker.pkg.dev/ecommerce-platform-automation/inventory-registry/frontend
 appVersion: v0.8.0
 appReplicas: 2
 containerPort: 8080

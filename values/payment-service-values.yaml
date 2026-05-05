@@ -1,5 +1,5 @@
 appName: paymentservice
-appImage: gcr.io/google-samples/microservices-demo/paymentservice
+appImage: northamerica-northeast2-docker.pkg.dev/ecommerce-platform-automation/inventory-registry/paymentservice
 appVersion: v0.10.0
 appReplicas: 2
 containerPort: 50051
