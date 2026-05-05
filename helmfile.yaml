@@ -2,6 +2,7 @@
 namespace: ms-app
 helmDefaults:
   createNamespace: true
+  # Add a comment to helmfile.yaml
 
 releases: 
 #  - name: rediscart
