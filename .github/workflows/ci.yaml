@@ -1,0 +1,59 @@
+name: Build and Deploy via WIF
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write        # Required for WIF
+      contents: write        # Needed to update GitOps repo
+      actions: read
+
+    steps:
+    - name: Checkout source code
+      uses: actions/checkout@v4
+
+    - name: Authenticate to Google Cloud (WIF)
+      uses: google-github-actions/auth@v2
+      with:
+        workload_identity_provider: "projects/${{ vars.GCP_PROJECT_NUMBER }}/locations/global/workloadIdentityPools/github-pool/providers/github-provider"
+        service_account: "github-actions@ecommerce-platform-automation.iam.gserviceaccount.com"
+
+    - name: Configure Docker for Artifact Registry
+      run: |
+        gcloud auth configure-docker northamerica-northeast2-docker.pkg.dev
+
+    - name: Build Docker image
+      run: |
+        IMAGE="northamerica-northeast2-docker.pkg.dev/ecommerce-platform-automation/my-registry/my-app:${{ github.sha }}"
+        docker build -t $IMAGE .
+        echo "IMAGE=$IMAGE" >> $GITHUB_ENV
+
+    - name: Push Docker image
+      run: |
+        docker push $IMAGE
+
+    - name: Checkout GitOps repo
+      uses: actions/checkout@v4
+      with:
+        repository: ummahafsahimi/A-Cloude-Native-SaaS-Platform-with-Full-DevOps-Automation
+        token: ${{ secrets.GITOPS_PAT }}
+        path: gitops
+
+    - name: Update image tag in Helmfile
+      run: |
+        sed -i "s|tag: .*|tag: \"${{ github.sha }}\"|g" gitops/helmfile.yaml
+
+    - name: Commit and push changes
+      run: |
+        cd gitops
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
+        git add .
+        git commit -m "Update image tag to ${{ github.sha }}"
+        git push
+
