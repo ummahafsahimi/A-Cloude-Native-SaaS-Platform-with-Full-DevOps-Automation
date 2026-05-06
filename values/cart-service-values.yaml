@@ -7,7 +7,7 @@ containerEnvVars:
 - name: PORT
   value: "7070"
 - name: REDIS_ADDR
-  value: "10.218.138.180"
+  value: "10.132.62.236"
 
 servicePort: 7070
 
