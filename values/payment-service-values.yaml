@@ -1,6 +1,6 @@
 appName: paymentservice
 appImage: northamerica-northeast2-docker.pkg.dev/ecommerce-platform-automation/inventory-registry/paymentservice
-appVersion: v0.10.0
+appVersion: "8034a2a882087c142cd14a560813db37ebc2fbc2"
 appReplicas: 2
 containerPort: 50051
 containerEnvVars: 
