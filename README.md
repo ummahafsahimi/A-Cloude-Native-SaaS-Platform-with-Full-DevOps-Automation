@@ -110,25 +110,13 @@ Hit a Terraform Workload Identity binding race and fixed it by enforcing correct
 
 Ran into GKE SSD quota/limit issues and resolved them by adjusting node pool configuration and understanding GCP resource limits.
 
-# Future Enhancements
-Add Jenkins CI/CD
-
-Add HTTPS + domain via GKE Ingress
-
-Add Cloud Monitoring dashboards
-
-Add autoscaling (HPA)
-
-Add distributed tracing
-
-Add service mesh (Istio or Anthos)
 
 ### Full End‑to‑End Pipeline Summary
 Stage	              Tool	                             Purpose
 CI	              GitHub Actions	           Build, test, scan, push images
 Artifact   	    Artifact Registry	           Store versioned container images
 GitOps	        GitHub Repo #2	             Holds Helmfile + manifests
-CD	             Argo CD	                    Deploy to GKE, drift correction, rollback
+CD	             Argo CD	                  Deploy to GKE, drift correction, rollback
 Infra	           Terraform	                GKE, Redis, VPC, IAM
 Observability	  Prometheus + Grafana        Metrics, dashboards, logs
                  + Cloud Logging	            
